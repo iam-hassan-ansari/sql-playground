@@ -1,0 +1,127 @@
+/* ===== Shared dark theme — reused across all Hassan Ansari demo projects ===== */
+:root {
+  --bg: #0b1220;
+  --surface: #121a2b;
+  --surface-2: #1a2438;
+  --text: #e6ebf5;
+  --muted: #93a0b8;
+  --primary: #3ba7ff;
+  --primary-dark: #2b86d1;
+  --accent: #22d3ee;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --border: #24304a;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: 'Consolas', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100vh;
+}
+
+a { color: var(--primary); }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+.topbar .badge {
+  font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  background: var(--warning); color: #1a1200; padding: 3px 8px; border-radius: 6px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+button, .btn {
+  font-family: var(--font);
+  background: var(--primary);
+  color: #071322;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, background .15s ease;
+}
+button:hover, .btn:hover { background: var(--primary-dark); }
+button:active, .btn:active { transform: scale(.98); }
+button.secondary { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+button.danger { background: var(--danger); color: #fff; }
+
+input, select, textarea {
+  font-family: var(--font);
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 14px; }
+th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
+
+.app-footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+}
+.app-footer a { color: var(--accent); text-decoration: none; }
+.app-footer a:hover { text-decoration: underline; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 18px; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+}
+
+/* ===== SQL Playground specific ===== */
+#sql-input {
+  width: 100%; font-family: var(--mono); font-size: 14px; resize: vertical;
+}
+.example-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.chip {
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--accent);
+  padding: 6px 12px; border-radius: 999px; font-size: 12px; font-family: var(--mono);
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+
+.error-box {
+  margin-top: 12px; background: rgba(239,68,68,.12); border: 1px solid var(--danger);
+  color: #ffb4b4; padding: 10px 14px; border-radius: 8px; font-family: var(--mono); font-size: 13px;
+}
+
+#result-area { margin-top: 16px; overflow-x: auto; }
+#result-area table { min-width: 100%; }
+.result-meta { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+
+.schema-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.schema-table { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.schema-table h4 { margin: 0 0 8px; color: var(--accent); font-family: var(--mono); }
+.schema-table ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
