@@ -1,7 +1,7 @@
 /* =========================================================
    SQL Playground (Demo)
    Runs real SQLite in the browser via sql.js (SQLite compiled
-   to WebAssembly). No backend, no server round-trip — every
+   to WebAssembly). No backend, no server round-trip - every
    query executes on-device.
    ========================================================= */
 
@@ -91,7 +91,7 @@ function renderSchema() {
 
 function renderChips() {
   const wrap = document.getElementById("example-chips");
-  wrap.innerHTML = EXAMPLES.map((q, i) => `<span class="chip" data-idx="${i}">${q.split("\n")[0].slice(0, 40)}${q.length > 40 ? "…" : ""}</span>`).join("");
+  wrap.innerHTML = EXAMPLES.map((q, i) => `<span class="chip" data-idx="${i}">${q.split("\n")[0].slice(0, 40)}${q.length > 40 ? "..." : ""}</span>`).join("");
   wrap.addEventListener("click", (e) => {
     const idx = e.target.dataset.idx;
     if (idx === undefined) return;
@@ -115,7 +115,7 @@ function runQuery() {
   try {
     const results = db.exec(sql);
     if (results.length === 0) {
-      resultArea.innerHTML = `<p class="muted">Query ran successfully — no rows returned.</p>`;
+      resultArea.innerHTML = `<p class="muted">Query ran successfully - no rows returned.</p>`;
       return;
     }
     results.forEach((res) => {
